@@ -1,0 +1,37 @@
+
+
+--------------------------------------------------------------------------------
+
+Name: RPresentation
+Lizenz: CC-BY-SA
+Creator: Naomi Pentrel
+
+Some of the CSS is based on
+http://www.ub.uni-bielefeld.de/library/schulung/praesentationen/impress-js/vorlage/#/start
+by Sebastian Wolf
+
+Informationen zur CC-Lizenz
+
+Sie dürfen:
+
+Teilen - Das Material in jedwedem Format oder Medium vervielfältigen und weiterverbreiten
+
+Bearbeiten - Das Material remixen, verändern und darauf aufbauen und zwar für beliebige Zwecke, sogar kommerziell.
+
+Unter folgenden Bedingungen:
+
+Namensnennung - Sie müssen die Urheberschaft ausreichend deutlich benennen, einen Link
+zur Lizenz beifügen und angeben, ob Änderungen vorgenommen wurden.
+Diese Angaben dürfen in jeder angemessenen Art und Weise gemacht werden, allerdings nicht so,
+dass der Eindruck entsteht, der Lizenzgeber unterstütze gerade Sie oder Ihre Nutzung des Werks besonders.
+
+Weitergabe unter gleichen Bedingungen - Wenn Sie das Material remixen, verändern oder anderweitig
+direkt darauf aufbauen, dürfen Sie Ihre Beiträge nur unter derselben Lizenz wie das Original verbreiten.
+
+Keine weiteren Einschränkungen - Sie dürfen keine zusätzlichen Klauseln oder technische Verfahren einsetzen, die anderen rechtlich irgendetwas untersagen, was die Lizenz erlaubt.
+
+Weitere Informationen unter
+
+http://creativecommons.org/licenses/by-sa/3.0/deed.de
+
+--------------------------------------------------------------------------------
