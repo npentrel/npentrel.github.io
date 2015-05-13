@@ -152,3 +152,8 @@ main:before {
   opacity: 1;
   cursor: pointer;
 }
+
+.step-degree .step {
+  opacity: 1;
+  cursor: pointer;
+}

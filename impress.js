@@ -271,7 +271,22 @@
             var next = active;
             switch( event.keyCode ) {
                 case 33: ; // pg up
-                case 37: ; // left
+                case 37: // left
+                     if (steps[steps.indexOf(active)].id == "overview") {
+                        var nextId = steps[ steps.length-2 ].id.replace(/d.*/,"");
+                        console.log(nextId);
+                        next = document.getElementById(nextId);
+                     } else {
+                         var nextId = steps[steps.indexOf( active )].id.replace(/(step-)/i, "");
+                         var id = (parseInt(nextId.replace(/[^\d].*/i)) - 1);
+                         nextId = "step-" + id;
+                         console.log(nextId);
+                         next = document.getElementById(nextId);
+                         if (!next) {
+                            next = overview;
+                         }
+                     }
+                     break;
                 case 38:   // up
 //                         next = steps.indexOf( active ) - 1;
 //                         next = next >= 0 ? steps[ next ] : steps[ steps.length-1 ];
@@ -281,7 +296,7 @@
                             next = document.getElementById(nextId);
                          } else {
                              var nextId = steps[steps.indexOf( active )].id.replace(/(step-)/i, "");
-                             var id = (parseInt(nextId.replace(/[^\d].*/i)) - 1);
+                             var id = (parseInt(nextId.replace(/[^\d].*/i)));
                              nextId = "step-" + id;
                              console.log(nextId);
                              next = document.getElementById(nextId);
