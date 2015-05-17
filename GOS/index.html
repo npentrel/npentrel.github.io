@@ -89,7 +89,26 @@
 			<br/>
 				Improvement: <br/></span>
  			<br/>
-			<img src="assets/reefSideways.jpg" height="500px">
+ 			<table style="width:100%">
+			  <tr>
+			    <td>			
+			    	<img src="assets/reefSideways.jpg" height="500px">
+				</td>
+			    <td>
+					<pre>
+						<code>
+						void ExploreAlgorithm::controlDistanceToCliff() {
+		    				if(minimumDistanceValue > scanDistance) {
+		        				moveTowardsCliff(); 
+		    				} else if(minimumDistanceValue < (scanDistance - offset)) {
+		    	   				moveAwayFromCliff();
+						    } 
+						}
+						</code>
+					</pre>
+				</td> 
+			  </tr>
+		</table>
 		</main>
 	</div>
 
@@ -141,7 +160,33 @@
 			<br/>
 				Improvement ScanDistance: <br/></span>
  			<br/>
-			<img src="assets/ReducedDistanceExplain.jpg" height="500px">
+ 			<table style="width:100%">
+			  <tr>
+			    <td>			
+			<img src="assets/ReducedDistanceExplain.jpg" height="300px">
+				</td>
+			    <td style="padding-left:30px">
+					<pre><code>double DistanceFinder::imageCb(const sensor_msgs::ImageConstPtr& msg) {
+						cv_bridge::CvImageConstPtr cv_ptr = getImage(msg, msg->encoding);
+						double scanDistance = std::numeric_limits::max();
+						int startRobotFieldWidth = (fieldOfVisionWidth - robotWidth)/2;
+						int endRobotFieldWidth = startRobotField + robotWidth;
+						int startRobotFieldHeight = (fieldOfVisionHeight - robotHeight)/2;
+						int endRobotFieldHeight = startRobotFieldHeight + robotWidth;
+						
+						for(int i = startRobotFieldWidth; i < endRobotFieldWidth; i++) {
+						    for(int j = startRobotFieldHeight; j < endRobotFieldHeight; j++) {
+							    if(cv_ptr->image.at(i,j) < scanDistance) {
+						            scanDistance = cv_ptr->image.at(i,j);
+						        }
+						    }
+						}
+						return scanDistance;
+}
+					</code></pre>
+				</td> 
+			  </tr>
+		</table>
 		</main>
 	</div>
 
@@ -180,12 +225,12 @@
 				Holes in Mapping II: <br/></span>
  			<br/>
 			<img src="assets/MapOnlyDistanceHole1.png" width="200px">
-			<img src="assets/ReducedDistanceFindingHole1.png" width="200px">
 			<img src="assets/MapOnlyDistanceHole2.png" width="200px">
-			<img src="assets/ReducedDistanceFindingHole2.png" width="200px">
 			<img src="assets/MapOnlyDistanceHole3.png" width="200px">
-			<img src="assets/ReducedDistanceFindingHole3.png" width="200px">
 			<img src="assets/MapOnlyDistanceHole4.png" width="200px">
+			<img src="assets/ReducedDistanceFindingHole1.png" width="200px">
+			<img src="assets/ReducedDistanceFindingHole2.png" width="200px">
+			<img src="assets/ReducedDistanceFindingHole3.png" width="200px">
 			<img src="assets/ReducedDistanceFindingHole4.png" width="200px">		
 			<span text-align:"center">
 			<br/> <br/> <br/> <br/>
@@ -203,7 +248,12 @@
 			</presentationTitl>
 		</header>
 		<main>
-			improvements
+			<span text-align:"center">
+				<br/>
+				Improvement + Code <br/>
+			</span>
+ 			<br/>
+
 		</main>
 	</div>
 
@@ -215,8 +265,16 @@
 			</presentationTitl>
 		</header>
 		<main>
-			evaluation
-		</main>
+			<span text-align:"center">
+			<br/>
+				Mapping with Improvement of : <br/></span>
+ 			<br/>
+			<img src="assets/tbd.png" height="250px">
+			<img src="assets/reefOriginal.png" height="250px">
+			<span text-align:"center">
+			<br/> <br/> <br/> <br/>
+				Let's look in more detail. <br/></span>
+ 			<br/>		</main>
 	</div>
 
 	<div class="step slide" data-x="13750" data-y="0" data-z="0" data-rotate-y="0">
@@ -227,11 +285,75 @@
 			</presentationTitl>
 		</header>
 		<main>
-			conclusion
+			<span text-align:"center">
+			<br/>
+				Holes in Mapping III: <br/></span>
+ 			<br/>
+			<img src="assets/MapOnlyDistanceHole1.png" width="200px">
+			<img src="assets/MapOnlyDistanceHole2.png" width="200px">
+			<img src="assets/MapOnlyDistanceHole3.png" width="200px">
+			<img src="assets/MapOnlyDistanceHole4.png" width="200px">
+			<img src="assets/ReducedDistanceFindingHole1.png" width="200px">
+			<img src="assets/ReducedDistanceFindingHole2.png" width="200px">
+			<img src="assets/ReducedDistanceFindingHole3.png" width="200px">
+			<img src="assets/ReducedDistanceFindingHole4.png" width="200px">		
+			<img src="assets/tbd.png" width="200px">
+			<img src="assets/tbd.png" width="200px">
+			<img src="assets/tbd.png" width="200px">
+			<img src="assets/tbd.png" width="200px">		
+			<span text-align:"center">
+			<br/> <br/> <br/> <br/>
+				=> Obvious improvements! <br/></span>
+ 			<br/>
 		</main>
 	</div>
 
-	<div id="overview" class="step" data-x="7500" data-rotate-y="0"
+	<div class="step slide" data-x="15000" data-y="0" data-z="0" data-rotate-y="0">
+		<header>
+			<presentationTitle>
+				<pTitle>Advanced Robotics Project </ptitle> 
+				<pAuthor> by Naomi Pentrel & Denis Rochau </pAuthor>
+			</presentationTitl>
+		</header>
+		<main>
+			<span text-align:"center">
+				<br/>
+				Limitations & Possible Extensions: <br/>
+			</span>
+		</main>
+	</div>
+
+	<div class="step slide" data-x="16250" data-y="0" data-z="0" data-rotate-y="0">
+		<header>
+			<presentationTitle>
+				<pTitle>Advanced Robotics Project </ptitle> 
+				<pAuthor> by Naomi Pentrel & Denis Rochau </pAuthor>
+			</presentationTitl>
+		</header>
+		<main>
+			<span text-align:"center">
+				<br/>
+				Evaluation: <br/>
+			</span>
+		</main>
+	</div>
+
+	<div class="step slide" data-x="17500" data-y="0" data-z="0" data-rotate-y="0">
+		<header>
+			<presentationTitle>
+				<pTitle>Advanced Robotics Project </ptitle> 
+				<pAuthor> by Naomi Pentrel & Denis Rochau </pAuthor>
+			</presentationTitl>
+		</header>
+		<main>
+			<span text-align:"center">
+				<br/>
+				Conclusion: <br/>
+			</span>
+		</main>
+	</div>
+
+	<div id="overview" class="step" data-x="9250" data-rotate-y="0"
 		data-y="0" data-scale="10">
 	</div>
 
