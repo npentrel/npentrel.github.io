@@ -11,6 +11,25 @@ body {
     color:#333;
 }
 
+.box {
+  height: 600px;
+  line-height: 90px;
+}
+
+.titlediv {
+  width: 900px;
+  height: 700px;
+  line-height: 100px;
+  text-align: center;
+}
+
+.titlespan {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;      
+}
+
+
 .step {
   opacity: 0.2;
   width:1000px;
