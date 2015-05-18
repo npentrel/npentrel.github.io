@@ -1,4 +1,4 @@
-<html><head><title> hello </title>
+<html><head><title> Advanced Robotics Project </title>
 	<meta http-equiv="Content-Type" content="text/html
 	charset=UTF-8"> <link href="styles.css" rel="stylesheet" /> </head>
 	<body> <div id="impress"> <div class="no-support-message"> Sorry! Your
@@ -249,8 +249,34 @@
 		</header>
 		<main>
 			<span text-align:"center">
-				<br/><br/>
-			</span>
+			<br/>
+				Improvement ScanDistance: <br/></span>
+ 			<br/>
+ 			<table style="width:100%">
+			  <tr>
+			    <td>			
+			<img src="assets/ReducedDistanceFindingHole1.png" width="200px">
+			<img src="assets/ReducedDistanceFindingHole2.png" width="200px">
+			<img src="assets/ReducedDistanceFindingHole3.png" width="200px">
+			<img src="assets/ReducedDistanceFindingHole4.png" width="200px">		
+				</td>
+			    <td style="padding-left:30px">
+					<pre><code>
+					void ExploreAlgorithm::rotateAround() {
+					    tf::Quaternion q = this->transform.getRotation();
+					    tf::Matrix3x3 m(q);
+                        this->odom.twist.twist.angular.z = 1;
+					    double yaw = getCurrentYaw(m) 
+					    yaw = yaw + PI;
+					    if (fullyRotated(yaw)) {
+					        stopRotating();
+					    }
+					    this->position_pub.publish(this->odom);
+					}
+					</code></pre>
+				</td> 
+			  </tr>
+		</table>
  			<br/>
 
 		</main>
@@ -327,12 +353,17 @@
 			</presentationTitl>
 		</header>
 		<main>
-			<span text-align:"center">
+			<span style="text-align:center">
 				<br/>
-				Limitations & Possible Extensions: <br/>
+				Limitations & Possible Extensions: <br/> <br/> <br/> <br/>
+				Obstacle avoidance <br/> <br/> <br/>
+				Map Creation <br/> <br/> <br/>
+				Movement <br/> <br/> <br/>
 			</span>
+
 		</main>
 	</div>
+
 
 	<div class="step slide" data-x="16250" data-y="0" data-z="0" data-rotate-y="0">
 		<header>
@@ -344,23 +375,10 @@
 		<main>
 			<span text-align:"center">
 				<br/>
-				Evaluation: <br/>
+				Conclusion: <br/> <br/>
 			</span>
-		</main>
-	</div>
+			<img src="assets/FinalMapping.png" height="500px">
 
-	<div class="step slide" data-x="17500" data-y="0" data-z="0" data-rotate-y="0">
-		<header>
-			<presentationTitle>
-				<pTitle>Advanced Robotics Project </ptitle> 
-				<pAuthor> by Naomi Pentrel & Denis Rochau </pAuthor>
-			</presentationTitl>
-		</header>
-		<main>
-			<span text-align:"center">
-				<br/>
-				Conclusion: <br/>
-			</span>
 		</main>
 	</div>
 
