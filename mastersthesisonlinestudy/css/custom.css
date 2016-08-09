@@ -1,0 +1,105 @@
+.nobottommargin {
+    margin-bottom: -10px !important;  
+}
+
+one {
+    margin-left: 3.5em;
+    padding-left: 1em;
+}
+
+.sametopic {
+  border:1px solid blue !important;
+}
+
+.newtopic {
+  border:1px solid cyan !important;
+}
+
+.full {
+    width: 100%;
+    height: 100%
+}
+
+.topcentered {
+    position: absolute !important;
+    top: 80px !important;
+    left: 100px !important;
+}
+
+.small {
+    font-family: "Times New Roman", Times, serif !important;
+    text-align: left !important;
+    font-size: 18px !important; 
+}
+
+.medium {
+    font-family: "Times New Roman", Times, serif !important;
+    text-align: justify !important;
+    font-size: 23px !important; 
+    padding-top: 1em !important;
+}
+
+
+.slidedecor {
+    width: 900px !important;
+    height: 500px !important;
+    padding: 1em 1em 1em 1em !important;
+    margin: 0.5em 0em 0em -0.1em !important;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.listdecor {
+    font-family: "Times New Roman", Times, serif !important;
+    text-align: left !important;
+    font-size: 30px !important; 
+    padding: 0em 0em 2.5em 0em !important;
+}
+
+.listdecorlast {
+    font-family: "Times New Roman", Times, serif !important;
+    text-align: left !important;
+    font-size: 30px !important; 
+    padding: 0em 0em 0em 0em !important;
+}
+
+.tiny {
+    font-family: "Times New Roman", Times, serif !important;
+    text-align: right !important;
+    padding-right: 2em !important;
+    font-size: 14px !important; 
+}
+
+
+.reveal .footer {
+  position: absolute;
+  bottom: 1em;
+  left: 43%;
+  font-size: 0.5em;
+  z-index:9;
+}
+
+.reveal .header {
+  position: absolute;
+  top: 1em;
+  left: 43%;
+  font-size: 0.5em;
+  z-index:9;
+}
+
+.reveal .leftarr {
+  position: absolute;
+  top: 35%;
+  left: 1em;
+  font-size: 0.5em;
+  z-index:9;
+}
+
+.reveal .rightarr {
+  position: absolute;
+  top: 40%;
+  right: 1em;
+  font-size: 0.5em;
+  z-index:9;
+}
+
+.invert {-webkit-filter: invert(100%); filter: invert(100%);}
