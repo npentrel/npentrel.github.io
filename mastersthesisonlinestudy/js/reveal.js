@@ -334,7 +334,7 @@
 
 	var lastSeconds = Date.now() / 1000;
 	var logging = "direction, next, type, time, seconds spent\n";
-	printNavigation("start", ["0", "0"], ["1", "1"]);
+	printNavigation("start", ["0", "0"], ["0", "0"]);
 
 	/**
 	 * Starts up the presentation if the client is capable.
@@ -4305,7 +4305,7 @@
 
 	function printNavigation(direction, thisSlide, nextSlide) {
 		var secondsNow = Date.now() / 1000;
-		if (thisSlide[0] != 0) {
+		if (nextSlide[0] != 0 && logging != "direction, next, type, time, seconds spent\n") {
 			logging += (secondsNow - lastSeconds).toFixed(2) + "\n";
 		} 
 
@@ -4315,26 +4315,32 @@
 			console.save(logging);
 		}
 
-		logging += direction + ", ";
+		if (nextSlide[0] != 0) {
+			if (nextSlide[0] == 1 && nextSlide[1] == 1) {
+				logging += "start, "; 
+			} else {
+				logging += direction + ", ";				
+			}
 
-		logging += nextSlide[0] + "-" + nextSlide[1] + ", ";
+			logging += nextSlide[0] + "-" + nextSlide[1] + ", ";
 
-		var slideType = "";
+			var slideType = "";
 
-		if ((TOPICS["t"]).indexOf(nextSlide[0] + "/" + nextSlide[1]) >= 0) {
-			slideType = "t";
-		}
-		if ((TOPICS["v"]).indexOf(nextSlide[0] + "/" + nextSlide[1]) >= 0) {
-			slideType = "v";
-		}
-		if ((TOPICS["b"]).indexOf(nextSlide[0] + "/" + nextSlide[1]) >= 0) {
-			slideType = "b";
-		}
-		if ((TOPICS["p"]).indexOf(nextSlide[0] + "/" + nextSlide[1]) >= 0) {
-			slideType = "p";
-		}
+			if ((TOPICS["t"]).indexOf(nextSlide[0] + "/" + nextSlide[1]) >= 0) {
+				slideType = "t";
+			}
+			if ((TOPICS["v"]).indexOf(nextSlide[0] + "/" + nextSlide[1]) >= 0) {
+				slideType = "v";
+			}
+			if ((TOPICS["b"]).indexOf(nextSlide[0] + "/" + nextSlide[1]) >= 0) {
+				slideType = "b";
+			}
+			if ((TOPICS["p"]).indexOf(nextSlide[0] + "/" + nextSlide[1]) >= 0) {
+				slideType = "p";
+			}
 
-		logging += slideType+ ", " + timeStamp() + ", ";
+			logging += slideType+ ", " + timeStamp() + ", ";
+		}
 	}
 
 	/**
